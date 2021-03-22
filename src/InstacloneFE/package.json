@@ -45,6 +45,8 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
+    "eslint": "^7.22.0",
+    "prettier": "^2.2.1",
     "typescript": "^3.9.9"
   }
 }

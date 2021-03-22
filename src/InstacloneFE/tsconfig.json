@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "rootDir":"src",
-    "outDir":"build",
-    "target": "es5",
+    "rootDir": "src",
+    "outDir": "build",
+    "target": "es6",
+    "sourceMap": true,
+    "noImplicitAny": true,
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,9 +22,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react"
   },
   "include": [
-    "src"
+    "./src/**/*.ts"
   ]
 }
