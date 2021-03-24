@@ -1,5 +1,5 @@
 """
-ASGI config for InstacloneBE project.
+ASGI config for TwitterCloneBE project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'InstacloneBE.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'TwitterCloneBE.settings')
 
 application = get_asgi_application()
