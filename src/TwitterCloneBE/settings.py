@@ -11,8 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# WHERE MANAGE.PY lives
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
 
@@ -25,7 +27,7 @@ SECRET_KEY = '4u-%!+izzptk2@g45g9x#^r)#v63!^w+d+#p0_!e4x*f!^(t1s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'TwitterCloneBE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
