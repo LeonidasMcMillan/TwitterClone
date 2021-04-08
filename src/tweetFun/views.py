@@ -13,6 +13,12 @@ def homePage(request, *args, **kwargs):
     return render(request, "pages/home.html",context ={}, status = 200)
 
 def tweetCreateView(request, *args, **kwargs):
+    user = request.user
+    if not request.user.is_authenticated:
+        user = None
+        if request.is_ajax():
+            return JsonResponse({}, status = 401)
+        return redirect(settings.LOGIN_URL)
     
     
     form = TweetForm(request.POST or None)
@@ -21,6 +27,7 @@ def tweetCreateView(request, *args, **kwargs):
     
     if form.is_valid():
         obj = form.save(commit=False)
+        obj.user = user
         obj.save()
         if request.is_ajax():
             return JsonResponse(obj.serialize(), status = 201)
